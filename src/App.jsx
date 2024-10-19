@@ -1,11 +1,15 @@
-import { Button, CssBaseline } from "@mui/material";
+import { CssBaseline } from "@mui/material";
+import BarraNavegacion from "./components/BarraNavegacion";
+import Inicio from "./components/Inicio";
+import Footer from "./components/Footer";
 
 function App() {
   return (
     <>
       <CssBaseline />
-      <h1>Hola mundo</h1>
-      <Button variant="contained">Soy un boton</Button>
+      <BarraNavegacion />
+      <Inicio />
+      <Footer />
     </>
   );
 }
