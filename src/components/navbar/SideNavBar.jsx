@@ -4,6 +4,7 @@ import {
   Collapse,
   List,
   ListItem,
+  ListItemButton,
   ListItemText,
 } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
@@ -14,14 +15,16 @@ function SideNavBar() {
   const [openCalzado, setOpenCalzado] = useState(false);
 
   return (
-    <Box sx={{ width: 250, bgcolor: "slateblue" }}>
+    <Box sx={{ width: 250, height: "100%", bgcolor: "#1976d2", color: "#fff" }}>
       <nav>
         <List>
-          <ListItem>
+          <ListItem disablePadding>
             <Box
               sx={{ display: "flex", justifyContent: "space-between", flex: 1 }}
             >
-              <ListItemText primary="Calzados" />
+              <ListItemButton component="a">
+                <ListItemText primary="Calzados" />
+              </ListItemButton>
               <Button
                 color="inherit"
                 onClick={() => setOpenCalzado(!openCalzado)}
@@ -32,25 +35,37 @@ function SideNavBar() {
           </ListItem>
           <Collapse in={openCalzado} timeout="auto" unmountOnExit>
             <List component="div" disablePadding>
-              <ListItem sx={{ pl: 4 }}>
-                <ListItemText primary="Zapatos" />
+              <ListItem sx={{ pl: 4 }} disablePadding>
+                <ListItemButton component="a">
+                  <ListItemText primary="Zapatos" />
+                </ListItemButton>
               </ListItem>
-              <ListItem sx={{ pl: 4 }}>
-                <ListItemText primary="Zapatillas" />
+              <ListItem sx={{ pl: 4 }} disablePadding>
+                <ListItemButton component="a">
+                  <ListItemText primary="Zapatillas" />
+                </ListItemButton>
               </ListItem>
-              <ListItem sx={{ pl: 4 }}>
-                <ListItemText primary="Botas" />
+              <ListItem sx={{ pl: 4 }} disablePadding>
+                <ListItemButton component="a">
+                  <ListItemText primary="Botas" />
+                </ListItemButton>
               </ListItem>
             </List>
           </Collapse>
-          <ListItem>
-            <ListItemText primary="Carrito" />
+          <ListItem disablePadding>
+            <ListItemButton component="a">
+              <ListItemText primary="Tu Carrito" />
+            </ListItemButton>
           </ListItem>
-          <ListItem>
-            <ListItemText primary="Contacto" />
+          <ListItem disablePadding>
+            <ListItemButton component="a">
+              <ListItemText primary="Contacto" />
+            </ListItemButton>
           </ListItem>
-          <ListItem>
-            <ListItemText primary="Sobre Nosotros" />
+          <ListItem disablePadding>
+            <ListItemButton component="a">
+              <ListItemText primary="Sobre Nosotros" />
+            </ListItemButton>
           </ListItem>
         </List>
       </nav>
