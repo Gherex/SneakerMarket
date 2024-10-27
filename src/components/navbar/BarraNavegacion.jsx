@@ -5,6 +5,7 @@ import SideNavBar from "./SideNavBar";
 import BarraBusqueda from "./BarraBusqueda";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
+import { NavLink } from "react-router-dom";
 
 function BarraNavegacion() {
   const [open, setOpen] = useState(false);
@@ -22,12 +23,15 @@ function BarraNavegacion() {
           <DehazeIcon />
         </IconButton>
 
+        {/* Logo de Zapatilla: Boton a Inicio */}
         <IconButton
           sx={{
             position: "absolute",
             left: "50%",
             transform: "translateX(-50%)",
           }}
+          component={NavLink}
+          to="/"
         >
           <img src="src/images/sneakerMarketLogo.png" style={{ width: 50 }} />
         </IconButton>
@@ -36,10 +40,12 @@ function BarraNavegacion() {
           <IconButton color="inherit">
             <BarraBusqueda />
           </IconButton>
-          <IconButton color="inherit">
+          {/* Contacto */}
+          <IconButton color="inherit" component={NavLink} to="/contacto">
             <MailOutlineIcon />
           </IconButton>
-          <IconButton color="inherit">
+          {/* Tu carrito */}
+          <IconButton color="inherit" component={NavLink} to="/carrito">
             <ShoppingCartOutlinedIcon />
           </IconButton>
         </Box>

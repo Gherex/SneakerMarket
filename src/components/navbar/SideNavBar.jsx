@@ -10,12 +10,13 @@ import {
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 
 function SideNavBar() {
   const [openCalzado, setOpenCalzado] = useState(false);
 
   return (
-    <Box sx={{ width: 250, height: "100%", bgcolor: "#1976d2", color: "#fff" }}>
+    <Box sx={{ width: 250, height: "100%", bgcolor: "#040412" }}>
       <nav>
         <List>
           <ListItem disablePadding>
@@ -53,17 +54,17 @@ function SideNavBar() {
             </List>
           </Collapse>
           <ListItem disablePadding>
-            <ListItemButton component="a">
+            <ListItemButton component={NavLink} to="/carrito">
               <ListItemText primary="Tu Carrito" />
             </ListItemButton>
           </ListItem>
           <ListItem disablePadding>
-            <ListItemButton component="a">
+            <ListItemButton component={NavLink} to="/contacto">
               <ListItemText primary="Contacto" />
             </ListItemButton>
           </ListItem>
           <ListItem disablePadding>
-            <ListItemButton component="a">
+            <ListItemButton component={NavLink} to="/sobrenosotros">
               <ListItemText primary="Sobre Nosotros" />
             </ListItemButton>
           </ListItem>
