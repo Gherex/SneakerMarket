@@ -1,4 +1,4 @@
-import Carrusel from "./Carrusel";
+import Carrusel from "./Carrusel/Carrusel";
 
 function Inicio() {
   return (

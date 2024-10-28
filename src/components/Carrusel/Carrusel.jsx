@@ -1,29 +1,11 @@
-import { useState } from "react";
-import bgZapas1 from "../images/bg-zapas-1.png";
-import bgZapas2 from "../images/bg-zapas-2.png";
-import bgZapas3 from "../images/bg-zapas-3.png";
 import { Button } from "@mui/material";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import CirculosCarrusel from "./CirculosCarrusel";
+import { useCarrusel } from "./useCarrusel";
 
 function Carrusel() {
-  const arrayCarrusel = [bgZapas1, bgZapas2, bgZapas3];
-  const [carruselIndex, setCarruselIndex] = useState(0);
-
-  function incrementarIndex() {
-    setCarruselIndex((prevIndex) => {
-      const newIndex =
-        prevIndex < arrayCarrusel.length - 1 ? prevIndex + 1 : prevIndex;
-      return newIndex;
-    });
-  }
-
-  function decrementarIndex() {
-    setCarruselIndex((prevIndex) => {
-      const newIndex = prevIndex > 0 ? prevIndex - 1 : prevIndex;
-      return newIndex;
-    });
-  }
+  const { arrayCarrusel, carruselIndex, incrementarIndex, decrementarIndex } = useCarrusel();
 
   return (
     <div
@@ -68,6 +50,7 @@ function Carrusel() {
           <ArrowForwardIosIcon style={{ fontSize: "2rem" }} />
         </Button>
       )}
+      <CirculosCarrusel carruselIndex={carruselIndex} />
     </div>
   );
 }
