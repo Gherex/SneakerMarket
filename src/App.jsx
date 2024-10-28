@@ -1,4 +1,4 @@
-import { Container, CssBaseline } from "@mui/material";
+import { Box, CssBaseline } from "@mui/material";
 import Inicio from "./components/Inicio";
 import Footer from "./components/Footer";
 import BarraNavegacion from "./components/NavBar/BarraNavegacion";
@@ -26,7 +26,13 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Container sx={{ paddingTop: "64px", marginBottom: "60px" }}>
+      <Box
+        disableGutters
+        sx={{
+          paddingTop: "64px",
+          marginBottom: "60px",
+        }}
+      >
         <CssBaseline />
         <BarraNavegacion />
         <Routes>
@@ -36,7 +42,7 @@ function App() {
           <Route path="/sobrenosotros" element={<SobreNosotros />} />
         </Routes>
         <Footer />
-      </Container>
+      </Box>
     </ThemeProvider>
   );
 }

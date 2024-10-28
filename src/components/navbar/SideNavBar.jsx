@@ -23,7 +23,10 @@ function SideNavBar() {
             <Box
               sx={{ display: "flex", justifyContent: "space-between", flex: 1 }}
             >
-              <ListItemButton component="a">
+              <ListItemButton
+                component="button"
+                onClick={() => setOpenCalzado(!openCalzado)}
+              >
                 <ListItemText primary="Calzados" />
               </ListItemButton>
               <Button
