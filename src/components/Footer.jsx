@@ -2,12 +2,11 @@ function Footer() {
   return (
     <footer
       style={{
-        position: "fixed",
-        bottom: 0,
-        left: 0,
-        width: "100%",
-        backgroundColor: "red",
-        margin: 0,
+        backgroundColor: "black",
+        height: "50px",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
       }}
     >
       Soy un footer

@@ -1,10 +1,12 @@
-import Carrusel from "./Carrusel/Carrusel";
+import Carrusel from "./carrusel/Carrusel";
+import InfoCompras from "./InfoCompras";
 
 function Inicio() {
   return (
     <>
       <main>
         <Carrusel />
+        <InfoCompras />
       </main>
     </>
   );

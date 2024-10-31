@@ -26,21 +26,23 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
+      <CssBaseline />
       <Box
-        disableGutters
         sx={{
-          paddingTop: "64px",
-          marginBottom: "60px",
+          display: "flex",
+          flexDirection: "column",
+          minHeight: "100vh", // Asegura que ocupe toda la pantalla
         }}
       >
-        <CssBaseline />
         <BarraNavegacion />
-        <Routes>
-          <Route path="/" element={<Inicio />} />
-          <Route path="/contacto" element={<Contacto />} />
-          <Route path="/carrito" element={<Carrito />} />
-          <Route path="/sobrenosotros" element={<SobreNosotros />} />
-        </Routes>
+        <Box component="main" sx={{ flexGrow: 1, paddingTop: "64px" }}>
+          <Routes>
+            <Route path="/" element={<Inicio />} />
+            <Route path="/contacto" element={<Contacto />} />
+            <Route path="/carrito" element={<Carrito />} />
+            <Route path="/sobrenosotros" element={<SobreNosotros />} />
+          </Routes>
+        </Box>
         <Footer />
       </Box>
     </ThemeProvider>

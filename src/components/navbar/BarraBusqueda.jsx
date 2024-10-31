@@ -1,5 +1,5 @@
 import SearchIcon from "@mui/icons-material/Search";
-import { IconButton, Box } from "@mui/material";
+import { IconButton, Box, Input } from "@mui/material";
 
 function BarraBusqueda() {
   return (
@@ -9,7 +9,11 @@ function BarraBusqueda() {
         alignItems: "center",
       }}
     >
-      <input type="text" placeholder="Buscar..." style={{ padding: 5 }} />
+      <Input
+        type="text"
+        placeholder="Buscar..."
+        sx={{ width: { xs: "150px" } }}
+      />
       <IconButton color="inherit" sx={{ paddingRight: 0 }}>
         <SearchIcon />
       </IconButton>

@@ -26,9 +26,12 @@ function BarraNavegacion() {
         {/* Logo de Zapatilla: Boton a Inicio */}
         <IconButton
           sx={{
-            position: "absolute",
-            left: "50%",
-            transform: "translateX(-50%)",
+            position: { xs: "relative", md: "absolute" },
+            left: { md: "50%" },
+            transform: { md: "translateX(-50%)" },
+            display: "flex",
+            justifyContent: { xs: "flex-start" },
+            pl: { xs: 1, md: 0 },
           }}
           component={NavLink}
           to="/"
@@ -41,7 +44,12 @@ function BarraNavegacion() {
             <BarraBusqueda />
           </IconButton>
           {/* Contacto */}
-          <IconButton color="inherit" component={NavLink} to="/contacto">
+          <IconButton
+            color="inherit"
+            component={NavLink}
+            to="/contacto"
+            sx={{ display: { xs: "none", sm: "flex" } }}
+          >
             <MailOutlineIcon />
           </IconButton>
           {/* Tu carrito */}

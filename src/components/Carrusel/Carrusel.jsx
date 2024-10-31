@@ -2,6 +2,7 @@ import { Button } from "@mui/material";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import CirculosCarrusel from "./CirculosCarrusel";
+import TextosCarrusel from "./TextosCarrusel";
 import { useCarrusel } from "./useCarrusel";
 
 function Carrusel() {
@@ -50,6 +51,7 @@ function Carrusel() {
           <ArrowForwardIosIcon style={{ fontSize: "2rem" }} />
         </Button>
       )}
+      <TextosCarrusel carruselIndex={carruselIndex} />
       <CirculosCarrusel carruselIndex={carruselIndex} />
     </div>
   );
