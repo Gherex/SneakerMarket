@@ -1,4 +1,4 @@
-import { Button } from "@mui/material";
+import { Button, useMediaQuery, useTheme } from "@mui/material";
 import PropTypes from "prop-types";
 import { arrayTextos } from "./arrayTextosCarrusel";
 
@@ -7,6 +7,10 @@ TextosCarrusel.propTypes = {
 };
 
 function TextosCarrusel({ carruselIndex: index }) {
+  const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
+  const isMediumScreen = useMediaQuery(theme.breakpoints.down("md"));
+
   return (
     <div
       style={{
@@ -15,31 +19,67 @@ function TextosCarrusel({ carruselIndex: index }) {
         bottom: 0,
         right: 0,
         left: 0,
-        width: "80%",
+        width: isSmallScreen ? "100%" : "80%",
         margin: "auto",
         display: "flex",
         flexDirection: "column",
         alignItems: "flex-start",
         justifyContent: "center",
-        gap: "0.1rem",
-        paddingLeft: "3rem",
-        fontSize: "1.3rem",
+        gap: isSmallScreen ? "0.5rem" : "0.1rem",
+        padding: isSmallScreen ? "5rem" : isMediumScreen ? "2rem" : "3rem",
+        fontSize: "1rem",
         fontWeight: "bold",
         userSelect: "none",
       }}
     >
-      <p style={{ margin: 0, textShadow: "2px 2px 2px black" }}>
+      <p
+        style={{
+          margin: 0,
+          textShadow: "2px 2px 2px black",
+          fontSize: "1rem",
+        }}
+      >
         {arrayTextos[index].pretitulo}
       </p>
-      <h2 style={{ margin: "1rem 0", textShadow: "2px 2px 2px black" }}>
+      <h2
+        style={{
+          margin: isSmallScreen
+            ? "0 0"
+            : isMediumScreen
+              ? "0.2rem 0"
+              : "1rem 0",
+          textShadow: "2px 2px 2px black",
+          fontSize: isSmallScreen
+            ? "1.2rem"
+            : isMediumScreen
+              ? "1.5rem"
+              : "3rem",
+        }}
+      >
         {arrayTextos[index].titulo}
       </h2>
-      <p style={{ margin: 0, textShadow: "2px 2px 2px black" }}>
+      <p
+        style={{
+          margin: 0,
+          textShadow: "2px 2px 2px black",
+          fontSize: isSmallScreen
+            ? "1rem"
+            : isMediumScreen
+              ? "1.2rem"
+              : "1.5rem",
+        }}
+      >
         {arrayTextos[index].descripcion}
       </p>
       <Button
         variant="contained"
-        style={{ width: "auto", marginTop: "1.2rem", fontWeight: "bold" }}
+        style={{
+          width: "auto",
+          marginTop: isSmallScreen ? "0.8rem" : "1.1rem",
+          fontWeight: "bold",
+          fontSize: isSmallScreen ? "0.7rem" : "1rem",
+          padding: isSmallScreen ? "0.4rem 1rem" : "0.6rem 1.5rem",
+        }}
       >
         {arrayTextos[index].boton}
       </Button>

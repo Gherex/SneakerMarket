@@ -1,5 +1,5 @@
 import Carrusel from "./carrusel/Carrusel";
-import InfoCompras from "./InfoCompras";
+import InfoCompras from "./infocompras/InfoCompras";
 
 function Inicio() {
   return (

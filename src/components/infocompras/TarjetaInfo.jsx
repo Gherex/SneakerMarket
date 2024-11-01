@@ -24,15 +24,14 @@ function TarjetaInfo({ titulo, subtitulo, nombreIcono }) {
     <Card
       sx={{
         color: "black",
-        padding: { md: "1rem 3rem", xl: "2rem 5rem" },
         minHeight: "300px",
         display: "flex",
         flexDirection: "column",
-        justifyContent: "flex-start",
+        justifyContent: "center",
         alignItems: "center",
         margin: "1rem 0",
-        paddingTop: { md: "2rem", xl: "3rem" },
         textAlign: "center",
+        padding: { xs: "0 2rem", md: "1rem 2rem", xl: "2rem 5rem" },
       }}
     >
       <Icon sx={{ width: "5rem", height: "5rem", marginBottom: "1rem" }}>
