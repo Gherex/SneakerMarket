@@ -1,7 +1,7 @@
 import { Box, CssBaseline } from "@mui/material";
 import Inicio from "./components/Inicio";
 import Footer from "./components/Footer";
-import BarraNavegacion from "./components/NavBar/BarraNavegacion";
+import BarraNavegacion from "./components/navbar/BarraNavegacion";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { Route, Routes } from "react-router-dom";
 import Contacto from "./components/Contacto";
