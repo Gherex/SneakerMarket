@@ -6,6 +6,7 @@ import BarraBusqueda from "./BarraBusqueda";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import { NavLink } from "react-router-dom";
+import imagenLogo from "public/sneakerMarketLogo.png";
 
 function BarraNavegacion() {
   const [open, setOpen] = useState(false);
@@ -36,7 +37,7 @@ function BarraNavegacion() {
           component={NavLink}
           to="/"
         >
-          <img src="src/images/sneakerMarketLogo.png" style={{ width: 50 }} />
+          <img src={imagenLogo} style={{ width: 50 }} />
         </IconButton>
 
         <Box sx={{ display: "flex", flex: 1, justifyContent: "flex-end" }}>
