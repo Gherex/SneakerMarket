@@ -5,7 +5,7 @@ import CirculosCarrusel from "./CirculosCarrusel";
 import TextosCarrusel from "./TextosCarrusel";
 import { useCarrusel } from "./useCarrusel";
 
-function Carrusel() {
+export default function Carrusel() {
   const { arrayCarrusel, carruselIndex, incrementarIndex, decrementarIndex } =
     useCarrusel();
 
@@ -66,5 +66,3 @@ function Carrusel() {
     </div>
   );
 }
-
-export default Carrusel;
