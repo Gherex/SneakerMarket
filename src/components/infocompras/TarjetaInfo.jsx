@@ -1,7 +1,7 @@
 import LocalShippingTwoToneIcon from "@mui/icons-material/LocalShippingTwoTone";
 import CreditCardTwoToneIcon from "@mui/icons-material/CreditCardTwoTone";
 import RedeemTwoToneIcon from "@mui/icons-material/RedeemTwoTone";
-import { Card, Icon, Typography } from "@mui/material";
+import { Card, Typography } from "@mui/material";
 import PropTypes from "prop-types";
 
 TarjetaInfo.propTypes = {
@@ -34,9 +34,8 @@ function TarjetaInfo({ titulo, subtitulo, nombreIcono }) {
         padding: { xs: "0 2rem", md: "1rem 2rem", xl: "2rem 5rem" },
       }}
     >
-      <Icon sx={{ width: "5rem", height: "5rem", marginBottom: "1rem" }}>
-        {devuelveIcono(nombreIcono)}
-      </Icon>
+      {devuelveIcono(nombreIcono)}
+
       <Typography
         variant="h6"
         component="h2"
@@ -51,4 +50,5 @@ function TarjetaInfo({ titulo, subtitulo, nombreIcono }) {
     </Card>
   );
 }
+
 export default TarjetaInfo;

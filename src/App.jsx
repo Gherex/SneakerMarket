@@ -7,6 +7,8 @@ import { Route, Routes } from "react-router-dom";
 import Contacto from "./components/Contacto";
 import Carrito from "./components/Carrito";
 import SobreNosotros from "./components/SobreNosotros";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 function App() {
   const theme = createTheme({
