@@ -40,17 +40,17 @@ function SideNavBar() {
           <Collapse in={openCalzado} timeout="auto" unmountOnExit>
             <List component="div" disablePadding>
               <ListItem sx={{ pl: 4 }} disablePadding>
-                <ListItemButton component="a">
+                <ListItemButton component={NavLink} to="/zapatos">
                   <ListItemText primary="Zapatos" />
                 </ListItemButton>
               </ListItem>
               <ListItem sx={{ pl: 4 }} disablePadding>
-                <ListItemButton component="a">
+                <ListItemButton component={NavLink} to="/zapatillas">
                   <ListItemText primary="Zapatillas" />
                 </ListItemButton>
               </ListItem>
               <ListItem sx={{ pl: 4 }} disablePadding>
-                <ListItemButton component="a">
+                <ListItemButton component={NavLink} to="/botas">
                   <ListItemText primary="Botas" />
                 </ListItemButton>
               </ListItem>
