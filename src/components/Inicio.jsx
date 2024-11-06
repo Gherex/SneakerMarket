@@ -1,7 +1,7 @@
 import Carrusel from "./carrusel/Carrusel";
 import InfoCompras from "./infocompras/InfoCompras";
 import Categorias from "./Categorias";
-import ProductosDestacados from "./ProductosDestacados";
+import ProductosDestacados from "./calzado/ProductosDestacados";
 import { Container } from "@mui/material";
 
 function Inicio() {
