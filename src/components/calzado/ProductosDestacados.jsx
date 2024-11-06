@@ -13,7 +13,30 @@ import EnvioGratis from "../EnvioGratis";
 import { useCalzado } from "./useCalzado";
 
 function ProductosDestacados() {
-  const { calzado: dataCalzado, loading } = useCalzado();
+  const { calzado: dataCalzado, loading, error } = useCalzado();
+
+  if (loading)
+    return (
+      <Typography
+        variant="h4"
+        component="p"
+        color="primary"
+        sx={{ textAlign: "center" }}
+      >
+        Cargando...
+      </Typography>
+    );
+  if (error)
+    return (
+      <Typography
+        variant="h4"
+        component="p"
+        color="primary"
+        sx={{ textAlign: "center" }}
+      >
+        Error: {error}
+      </Typography>
+    );
 
   return (
     <Container disableGutters sx={{ minWidth: "80%", pb: "2rem" }}>
@@ -29,22 +52,13 @@ function ProductosDestacados() {
       >
         Productos destacados
       </Typography>
-      {loading ? (
-        <Typography
-          variant="h4"
-          component="p"
-          color="primary"
-          sx={{ textAlign: "center" }}
-        >
-          Cargando ...
-        </Typography>
-      ) : (
-        <Grid2
-          container
-          spacing={3}
-          sx={{ justifyContent: "center", padding: { xs: "0 2rem", lg: "0" } }}
-        >
-          {Object.entries(dataCalzado).map(([, productos]) => {
+      <Grid2
+        container
+        spacing={3}
+        sx={{ justifyContent: "center", padding: { xs: "0 2rem", lg: "0" } }}
+      >
+        {dataCalzado &&
+          Object.entries(dataCalzado).map(([, productos]) => {
             return Object.entries(productos).map(([key, producto]) => (
               <Grid2 item size={{ xs: 12, sm: 6, md: 6, lg: 3 }} key={key}>
                 <Card
@@ -67,7 +81,7 @@ function ProductosDestacados() {
                       }}
                     >
                       <img
-                        src={producto.imgCalzado.imgCal1}
+                        src={`src/images/calzado/${producto.imgCalzado.imgCal1}`}
                         alt={producto.titulo}
                         style={{
                           width: "100%",
@@ -86,9 +100,11 @@ function ProductosDestacados() {
                         height: "250px", // El contenido ocupa el otro 50%
                       }}
                     >
+                      {/* Precio */}
                       <Typography variant="h4" component="p" color="primary">
                         $ {producto.precio}
                       </Typography>
+                      {/* Título */}
                       <Typography
                         variant="body1"
                         component="p"
@@ -115,8 +131,7 @@ function ProductosDestacados() {
               </Grid2>
             ));
           })}
-        </Grid2>
-      )}
+      </Grid2>
     </Container>
   );
 }
