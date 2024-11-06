@@ -41,9 +41,9 @@ function BarraNavegacion() {
         </IconButton>
 
         <Box sx={{ display: "flex", flex: 1, justifyContent: "flex-end" }}>
-          <IconButton color="inherit">
-            <BarraBusqueda />
-          </IconButton>
+          {/* Barra de Búsqueda */}
+          <BarraBusqueda />
+
           {/* Contacto */}
           <IconButton
             color="inherit"
@@ -53,6 +53,7 @@ function BarraNavegacion() {
           >
             <MailOutlineIcon />
           </IconButton>
+
           {/* Tu carrito */}
           <IconButton color="inherit" component={NavLink} to="/carrito">
             <ShoppingCartOutlinedIcon />

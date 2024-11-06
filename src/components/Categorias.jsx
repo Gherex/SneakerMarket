@@ -33,7 +33,7 @@ function Categorias() {
                   backgroundImage: `url(${imgZapatillas})`,
                   backgroundSize: "cover",
                   backgroundPosition: "center",
-                  height: "100%",
+                  height: { xs: "300px", md: "100%" },
                   padding: "10rem",
                   transition: "0.2s",
                   "&:hover": {
@@ -59,6 +59,7 @@ function Categorias() {
                     backgroundSize: "cover",
                     backgroundPosition: "center",
                     width: "200%",
+                    height: { xs: "300px" },
                     aspectRatio: 2,
                     transition: "0.2s",
                     "&:hover": {
@@ -76,6 +77,7 @@ function Categorias() {
                     backgroundSize: "cover",
                     backgroundPosition: "center",
                     width: "200%",
+                    height: { xs: "300px" },
                     aspectRatio: 2,
                     transition: "0.2s",
                     "&:hover": {
