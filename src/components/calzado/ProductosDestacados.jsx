@@ -81,7 +81,7 @@ function ProductosDestacados() {
                       }}
                     >
                       <img
-                        src={`src/images/calzado/${producto.imgCalzado.imgCal1}`}
+                        src={`public/images/calzado/${producto.imgCalzado.imgCal1}`}
                         alt={producto.titulo}
                         style={{
                           width: "100%",

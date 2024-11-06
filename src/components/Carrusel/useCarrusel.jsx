@@ -1,7 +1,7 @@
 import { useState } from "react";
-import bgZapas1 from "/src/images/bg-zapas-1.png";
-import bgZapas2 from "/src/images/bg-zapas-2.png";
-import bgZapas3 from "/src/images/bg-zapas-3.png";
+import bgZapas1 from "/images/bg-zapas-1.png";
+import bgZapas2 from "/images/bg-zapas-2.png";
+import bgZapas3 from "/images/bg-zapas-3.png";
 
 export function useCarrusel() {
   const arrayCarrusel = [bgZapas1, bgZapas2, bgZapas3];

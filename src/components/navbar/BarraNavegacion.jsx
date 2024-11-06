@@ -6,7 +6,7 @@ import BarraBusqueda from "./BarraBusqueda";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import { NavLink } from "react-router-dom";
-import imagenLogo from "../../images/sneakerMarketLogo.png";
+import imagenLogo from "/images/sneakerMarketLogo.png";
 
 function BarraNavegacion() {
   const [open, setOpen] = useState(false);

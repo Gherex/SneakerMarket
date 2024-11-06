@@ -1,8 +1,8 @@
 import { Card, Box, Container, Grid2, Typography } from "@mui/material";
 import { NavLink } from "react-router-dom";
-import imgZapatillas from "../images/calzado/categoria-zapatillas.jpg";
-import imgZapatos from "../images/calzado/categoria-zapatos.jpg";
-import imgBotas from "../images/calzado/categoria-botas.jpg";
+import imgZapatillas from "/images/calzado/categoria-zapatillas.jpg";
+import imgZapatos from "/images/calzado/categoria-zapatos.jpg";
+import imgBotas from "/images/calzado/categoria-botas.jpg";
 
 function Categorias() {
   return (
