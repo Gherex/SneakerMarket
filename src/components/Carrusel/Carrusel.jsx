@@ -25,6 +25,17 @@ export default function Carrusel() {
         position: "relative",
       }}
     >
+      <div
+        style={{
+          width: "100%",
+          backgroundColor: "rgba(0, 0, 0, 0.3)",
+          height: "auto",
+          paddingTop: isSmallScreen ? "100%" : "33.33%",
+          position: "absolute",
+          zIndex: 1,
+          top: 0,
+        }}
+      ></div>
       {carruselIndex === 0 ? null : (
         <Button
           variant="contained"
@@ -34,7 +45,7 @@ export default function Carrusel() {
             left: 0,
             transform: "translateY(-50%)",
             padding: isSmallScreen ? "2rem 0" : "2.5rem 0.1rem",
-            zIndex: 1,
+            zIndex: 10,
           }}
           onClick={decrementarIndex}
         >
@@ -46,13 +57,14 @@ export default function Carrusel() {
       {carruselIndex === 2 ? null : (
         <Button
           variant="contained"
+          color="primary"
           sx={{
             position: "absolute",
             top: "50%",
             right: 0,
             transform: "translateY(-50%)",
             padding: isSmallScreen ? "2rem 0" : "2.5rem 0.1rem",
-            zIndex: 1,
+            zIndex: 10,
           }}
           onClick={incrementarIndex}
         >

@@ -36,6 +36,9 @@ function BarraNavegacion() {
           }}
           component={NavLink}
           to="/"
+          onClick={() => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }}
         >
           <img src={imagenLogo} alt="Logo" style={{ width: 50 }} />
         </IconButton>

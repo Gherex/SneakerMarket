@@ -63,7 +63,7 @@ function ProductosDestacados() {
               <Grid2 item size={{ xs: 12, sm: 6, md: 6, lg: 3 }} key={key}>
                 <Card
                   sx={{
-                    height: "500px",
+                    height: "min-content",
                     width: "100%",
                     transition: "0.2s",
                     "&:hover": {
@@ -81,7 +81,7 @@ function ProductosDestacados() {
                       }}
                     >
                       <img
-                        src={`public/images/calzado/${producto.imgCalzado.imgCal1}`}
+                        src={`/images/calzado/${producto.imgCalzado.imgCal1}`}
                         alt={producto.titulo}
                         style={{
                           width: "100%",

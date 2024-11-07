@@ -30,6 +30,7 @@ function TextosCarrusel({ carruselIndex: index }) {
         fontSize: "1rem",
         fontWeight: "bold",
         userSelect: "none",
+        zIndex: 10,
       }}
     >
       <p
