@@ -34,7 +34,14 @@ function Footer() {
           padding: "20px 0",
         }}
       >
-        <Box>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-around",
+            alignItems: "center",
+          }}
+        >
           <IconButton
             component={NavLink}
             to="/"
@@ -48,32 +55,47 @@ function Footer() {
             Pasión argentina en cada paso.
           </Typography>
         </Box>
-        <Box>
-          <Typography variant="h6" component="h4">
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
+            alignContent: "center",
+          }}
+        >
+          <Typography variant="h6" component="h4" disablePadding>
             Links de interés
           </Typography>
-          <List>
-            <ListItem sx={{ pl: 4 }} disablePadding>
-              <ListItemButton component={NavLink} to="/contacto">
+          <List sx={{ padding: 0 }}>
+            <ListItem disablePadding>
+              <ListItemButton
+                component={NavLink}
+                to="/contacto"
+                sx={{ padding: 0 }}
+              >
                 <ListItemText primary="Contacto" />
               </ListItemButton>
             </ListItem>
-            <ListItem sx={{ pl: 4 }} disablePadding>
-              <ListItemButton component={NavLink} to="/sobrenosotros">
+            <ListItem disablePadding>
+              <ListItemButton
+                component={NavLink}
+                to="/sobrenosotros"
+                sx={{ padding: 0 }}
+              >
                 <ListItemText primary="Sobre Nosotros" />
               </ListItemButton>
             </ListItem>
           </List>
         </Box>
-        <Box>
+        <Box textAlign="end">
           <Box>
             <FacebookOutlinedIcon style={{ cursor: "pointer" }} />
             <InstagramIcon style={{ cursor: "pointer" }} />
           </Box>
-          <Typography variant="body1" component="p">
+          <Typography variant="body1" component="p" marginBottom="0.2rem">
             Tel: 3425285858
           </Typography>
-          <Typography variant="body1" component="p">
+          <Typography variant="body1" component="p" marginBottom="0.2rem">
             germilagger@gmail.com
           </Typography>
           <Typography variant="body1" component="p">
@@ -89,7 +111,7 @@ function Footer() {
           margin: "20px 0",
         }}
       />
-      <Typography pb="1rem">
+      <Typography pb="1rem" fontSize="0.8rem">
         &copy; 2024 Gherex. Todos los derechos reservados.
       </Typography>
     </footer>
