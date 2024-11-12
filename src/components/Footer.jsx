@@ -30,6 +30,8 @@ function Footer() {
         sx={{
           display: "flex",
           width: "100%",
+          flexDirection: { xs: "column", sm: "row" },
+          alignItems: { xs: "center" },
           justifyContent: "space-around",
           padding: "20px 0",
         }}
@@ -40,6 +42,7 @@ function Footer() {
             flexDirection: "column",
             justifyContent: "space-around",
             alignItems: "center",
+            margin: { xs: "2rem 0" },
           }}
         >
           <IconButton
@@ -61,6 +64,7 @@ function Footer() {
             flexDirection: "column",
             justifyContent: "space-between",
             alignContent: "center",
+            margin: { xs: "2rem 0" },
           }}
         >
           <Typography variant="h6" component="h4" disablePadding>
@@ -87,7 +91,7 @@ function Footer() {
             </ListItem>
           </List>
         </Box>
-        <Box textAlign="end">
+        <Box textAlign={{ xs: "center", sm: "end" }} margin={{ xs: "2rem 0" }}>
           <Box>
             <FacebookOutlinedIcon style={{ cursor: "pointer" }} />
             <InstagramIcon style={{ cursor: "pointer" }} />
