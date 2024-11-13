@@ -45,7 +45,7 @@ export default function Carrusel() {
             left: 0,
             transform: "translateY(-50%)",
             padding: isSmallScreen ? "2rem 0" : "2.5rem 0.1rem",
-            zIndex: 10,
+            zIndex: 100,
           }}
           onClick={decrementarIndex}
         >
@@ -64,7 +64,7 @@ export default function Carrusel() {
             right: 0,
             transform: "translateY(-50%)",
             padding: isSmallScreen ? "2rem 0" : "2.5rem 0.1rem",
-            zIndex: 10,
+            zIndex: 100,
           }}
           onClick={incrementarIndex}
         >

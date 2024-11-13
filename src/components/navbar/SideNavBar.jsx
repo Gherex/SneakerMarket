@@ -62,12 +62,24 @@ function SideNavBar() {
             </ListItemButton>
           </ListItem>
           <ListItem disablePadding>
-            <ListItemButton component={NavLink} to="/contacto">
+            <ListItemButton
+              component={NavLink}
+              to="/contacto"
+              onClick={() => {
+                window.scrollTo({ top: 0 });
+              }}
+            >
               <ListItemText primary="Contacto" />
             </ListItemButton>
           </ListItem>
           <ListItem disablePadding>
-            <ListItemButton component={NavLink} to="/sobrenosotros">
+            <ListItemButton
+              component={NavLink}
+              to="/sobrenosotros"
+              onClick={() => {
+                window.scrollTo({ top: 0 });
+              }}
+            >
               <ListItemText primary="Sobre Nosotros" />
             </ListItemButton>
           </ListItem>

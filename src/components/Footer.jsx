@@ -76,6 +76,9 @@ function Footer() {
                 component={NavLink}
                 to="/contacto"
                 sx={{ padding: 0 }}
+                onClick={() => {
+                  window.scrollTo({ top: 0 });
+                }}
               >
                 <ListItemText primary="Contacto" />
               </ListItemButton>
@@ -85,6 +88,9 @@ function Footer() {
                 component={NavLink}
                 to="/sobrenosotros"
                 sx={{ padding: 0 }}
+                onClick={() => {
+                  window.scrollTo({ top: 0 });
+                }}
               >
                 <ListItemText primary="Sobre Nosotros" />
               </ListItemButton>

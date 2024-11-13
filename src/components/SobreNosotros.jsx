@@ -1,4 +1,4 @@
-import { Container, Typography } from "@mui/material";
+import { Box, Container, Typography } from "@mui/material";
 import imgBrothers from "/images/brothers.png";
 
 function SobreNosotros() {
@@ -12,21 +12,26 @@ function SobreNosotros() {
         padding: { xs: 0 },
       }}
     >
-      <div
-        style={{
-          height: "580px",
-          width: "55%",
+      <Box
+        sx={{
+          height: { xs: "480px", sm: "800px", md: "580px" },
+          width: { xs: "100%", sm: "100%", md: "55%" },
           backgroundImage: `url(${imgBrothers})`,
           backgroundSize: "cover",
           backgroundPosition: "center bottom",
           overflow: "hidden",
         }}
-      ></div>
+      ></Box>
       <Typography
         variant="h3"
         component="h2"
         color="primary"
-        sx={{ textAlign: "center", fontWeight: "bold", padding: "1rem 0" }}
+        sx={{
+          textAlign: "center",
+          fontWeight: "bold",
+          padding: { xs: "1.5rem 0", sm: "1rem 0" },
+          fontSize: { xs: "2rem", sm: "3rem" },
+        }}
       >
         Sobre Nosotros
       </Typography>
@@ -34,7 +39,10 @@ function SobreNosotros() {
         variant="body1"
         component="p"
         color="primary"
-        sx={{ fontSize: "1.3rem" }}
+        sx={{
+          fontSize: { xs: "1.2rem", sm: "1.3rem" },
+          padding: { xs: "0 1rem", sm: "0 2rem" },
+        }}
       >
         <span style={{ fontWeight: "bold" }}>SNEAKER STORE®</span> es una marca
         de calzado fundada en el año 2020 en la Ciudad de Santa Fe por dos

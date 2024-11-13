@@ -53,6 +53,9 @@ function BarraNavegacion() {
             component={NavLink}
             to="/contacto"
             sx={{ display: { xs: "none", sm: "flex" } }}
+            onClick={() => {
+              window.scrollTo({ top: 0 });
+            }}
           >
             <MailOutlineIcon />
           </IconButton>
