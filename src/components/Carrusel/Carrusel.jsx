@@ -4,13 +4,32 @@ import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import CirculosCarrusel from "./CirculosCarrusel";
 import TextosCarrusel from "./TextosCarrusel";
 import { useCarrusel } from "./useCarrusel";
+import { useEffect } from "react";
 
 export default function Carrusel() {
-  const { arrayCarrusel, carruselIndex, incrementarIndex, decrementarIndex } =
-    useCarrusel();
+  const {
+    arrayCarrusel,
+    carruselIndex,
+    incrementarIndex,
+    decrementarIndex,
+    setManualInteraction,
+    manualInteraction,
+  } = useCarrusel();
 
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
+
+  // Cambiar el índice cada 4 segundos solo si no hay interacción manual
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      if (!manualInteraction) {
+        // Solo cambiar automáticamente si no hay interacción manual
+        incrementarIndex();
+      }
+    }, 4000);
+
+    return () => clearInterval(intervalId);
+  }, [carruselIndex, incrementarIndex, manualInteraction]);
 
   return (
     <div
@@ -47,7 +66,10 @@ export default function Carrusel() {
             padding: isSmallScreen ? "2rem 0" : "2.5rem 0.1rem",
             zIndex: 100,
           }}
-          onClick={decrementarIndex}
+          onClick={() => {
+            setManualInteraction(true); // Detenemos la animación cuando el usuario toca el botón
+            decrementarIndex();
+          }}
         >
           <ArrowBackIosNewIcon
             style={{ fontSize: isSmallScreen ? "1.2rem" : "2rem" }}
@@ -66,7 +88,10 @@ export default function Carrusel() {
             padding: isSmallScreen ? "2rem 0" : "2.5rem 0.1rem",
             zIndex: 100,
           }}
-          onClick={incrementarIndex}
+          onClick={() => {
+            setManualInteraction(true);
+            incrementarIndex();
+          }}
         >
           <ArrowForwardIosIcon
             style={{ fontSize: isSmallScreen ? "1.2rem" : "2rem" }}

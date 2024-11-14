@@ -12,6 +12,8 @@ function EnvioGratis() {
         alignItems: "center",
         borderRadius: "10px",
         fontSize: "0.9rem",
+        textDecoration: "none",
+        color: "white",
       }}
     >
       Envío gratis

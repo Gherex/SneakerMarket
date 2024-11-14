@@ -1,6 +1,7 @@
 import { Button, useMediaQuery, useTheme } from "@mui/material";
 import PropTypes from "prop-types";
 import { arrayTextos } from "./arrayTextosCarrusel";
+import { NavLink } from "react-router-dom";
 
 TextosCarrusel.propTypes = {
   carruselIndex: PropTypes.number.isRequired,
@@ -81,6 +82,8 @@ function TextosCarrusel({ carruselIndex: index }) {
           fontSize: isSmallScreen ? "0.7rem" : "1rem",
           padding: isSmallScreen ? "0.4rem 1rem" : "0.6rem 1.5rem",
         }}
+        component={NavLink}
+        to={index == 0 ? "/botas" : index == 1 ? "/zapatos" : "/zapatillas"}
       >
         {arrayTextos[index].boton}
       </Button>

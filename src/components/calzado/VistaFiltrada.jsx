@@ -9,11 +9,11 @@ import {
   Grid2,
   Typography,
 } from "@mui/material";
-import { Link } from "react-router-dom";
 import EnvioGratis from "../EnvioGratis";
 import { useCalzado } from "./useCalzado";
+import { Link } from "react-router-dom";
 
-function ProductosDestacados() {
+function VistaFiltrada({ tipoCalzado }) {
   const { calzado: dataCalzado, loading, error } = useCalzado();
 
   if (loading)
@@ -46,12 +46,12 @@ function ProductosDestacados() {
         component="h2"
         color="primary"
         sx={{
-          textAlign: { xs: "center", sm: "center", md: "center", lg: "start" },
+          textAlign: "center",
           margin: { xs: "2rem 0 0.5rem", md: "4rem 0 1rem" },
           fontSize: { xs: "1.5rem", sm: "2.5rem" },
         }}
       >
-        Productos destacados
+        {tipoCalzado}
       </Typography>
       <Grid2
         container
@@ -59,22 +59,22 @@ function ProductosDestacados() {
         sx={{ justifyContent: "center", padding: { xs: "0 2rem", lg: "0" } }}
       >
         {dataCalzado &&
-          Object.entries(dataCalzado).map(([, productos]) => {
-            return Object.entries(productos).map(([key, producto]) => (
+          Object.entries(dataCalzado[tipoCalzado.toLowerCase()]).map(
+            ([key, producto]) => (
               <Grid2 item size={{ xs: 12, sm: 6, md: 6, lg: 3 }} key={key}>
-                <Card
-                  sx={{
-                    height: "min-content",
-                    width: "100%",
-                    transition: "0.2s",
-                    "&:hover": {
-                      transform: "scale(1.01)",
-                    },
-                  }}
+                <Link
+                  to={`/producto/${producto.id}`}
+                  style={{ textDecoration: "none" }}
                 >
-                  <Link
-                    to={`/calzado/${producto.id}`}
-                    style={{ textDecoration: "none", listStyle: "none" }}
+                  <Card
+                    sx={{
+                      height: "min-content",
+                      width: "100%",
+                      transition: "0.2s",
+                      "&:hover": {
+                        transform: "scale(1.01)",
+                      },
+                    }}
                   >
                     <CardActionArea>
                       {/* Contenedor de la imagen */}
@@ -132,14 +132,14 @@ function ProductosDestacados() {
                         </Button>
                       </Box>
                     </CardActionArea>
-                  </Link>
-                </Card>
+                  </Card>
+                </Link>
               </Grid2>
-            ));
-          })}
+            )
+          )}
       </Grid2>
     </Container>
   );
 }
 
-export default ProductosDestacados;
+export default VistaFiltrada;

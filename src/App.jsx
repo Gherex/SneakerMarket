@@ -7,6 +7,10 @@ import { Route, Routes } from "react-router-dom";
 import Contacto from "./components/Contacto";
 import Carrito from "./components/Carrito";
 import SobreNosotros from "./components/SobreNosotros";
+import Zapatillas from "./components/calzado/Zapatillas";
+import Zapatos from "./components/calzado/Zapatos";
+import Botas from "./components/calzado/Botas";
+import VistaDetallada from "./components/calzado/VistaDetallada";
 
 function App() {
   const theme = createTheme({
@@ -41,6 +45,10 @@ function App() {
             <Route path="/contacto" element={<Contacto />} />
             <Route path="/carrito" element={<Carrito />} />
             <Route path="/sobrenosotros" element={<SobreNosotros />} />
+            <Route path="/zapatillas" element={<Zapatillas />} />
+            <Route path="/zapatos" element={<Zapatos />} />
+            <Route path="/botas" element={<Botas />} />
+            <Route path="/calzado/:id" element={<VistaDetallada />} />
           </Routes>
         </Box>
         <Footer />

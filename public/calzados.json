@@ -1,6 +1,7 @@
 {
   "zapatillas": {
     "producto1": {
+      "id": 1,
       "imgCalzado": {
         "imgCal1": "zapa-1-1.jpg",
         "imgCal2": "zapa-1-2.jpg",
@@ -10,6 +11,7 @@
       "precio": 74.999
     },
     "producto2": {
+      "id": 2,
       "imgCalzado": {
         "imgCal1": "zapa-2-1.jpg",
         "imgCal2": "zapa-2-2.jpg",
@@ -19,6 +21,7 @@
       "precio": 79.999
     },
     "producto3": {
+      "id": 3,
       "imgCalzado": {
         "imgCal1": "zapa-3-1.jpg",
         "imgCal2": "zapa-3-2.jpg",
@@ -30,6 +33,7 @@
   },
   "zapatos": {
     "producto1": {
+      "id": 4,
       "imgCalzado": {
         "imgCal1": "zapato-1-1.jpg",
         "imgCal2": "zapato-1-2.jpg",
@@ -39,6 +43,7 @@
       "precio": 72.999
     },
     "producto2": {
+      "id": 5,
       "imgCalzado": {
         "imgCal1": "zapato-2-1.jpg",
         "imgCal2": "zapato-2-2.jpg",
@@ -50,6 +55,7 @@
   },
   "botas": {
     "producto1": {
+      "id": 6,
       "imgCalzado": {
         "imgCal1": "botas-1-1.jpg",
         "imgCal2": "botas-1-2.jpg",
@@ -59,6 +65,7 @@
       "precio": 73.999
     },
     "producto2": {
+      "id": 7,
       "imgCalzado": {
         "imgCal1": "botas-2-1.jpg",
         "imgCal2": "botas-2-2.jpg",
@@ -68,6 +75,7 @@
       "precio": 76.999
     },
     "producto3": {
+      "id": 8,
       "imgCalzado": {
         "imgCal1": "botas-3-1.jpg",
         "imgCal2": "botas-3-2.jpg",
