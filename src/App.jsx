@@ -10,7 +10,7 @@ import SobreNosotros from "./components/SobreNosotros";
 import Zapatillas from "./components/calzado/Zapatillas";
 import Zapatos from "./components/calzado/Zapatos";
 import Botas from "./components/calzado/Botas";
-import VistaDetallada from "./components/calzado/VistaDetallada";
+import VistaDetallada from "./components/calzado/vistadetallada/VistaDetallada";
 
 function App() {
   const theme = createTheme({
