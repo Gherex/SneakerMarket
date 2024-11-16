@@ -25,9 +25,10 @@ function PresentacionProducto({ img1, img2, img3 }) {
         alignItems: "center",
         justifyContent: "center",
         gap: "1rem",
-        width: "70%",
+        width: { xs: "50%", sm: "50%", md: "420px", lg: "900px" },
         margin: "auto",
         height: "100%",
+        minHeight: "200px",
       }}
     >
       {/* Botón izquierdo */}

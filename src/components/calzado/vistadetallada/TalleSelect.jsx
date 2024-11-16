@@ -26,6 +26,7 @@ function TalleSelect() {
           "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
             borderColor: "black",
           },
+          width: { xs: "90%" },
         }}
       >
         <MenuItem value="">

@@ -51,8 +51,10 @@ function VistaDetallada() {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          padding: "1rem",
+          flexDirection: { xs: "column", sm: "column", md: "row" },
+          padding: { xs: "0.2rem 0", sm: "0.2rem", md: "0.8rem", lg: "1rem" },
           border: "1px solid gray",
+          margin: { xs: "1rem" },
           borderRadius: "0.5rem",
         }}
       >
@@ -61,7 +63,10 @@ function VistaDetallada() {
           img2={producto.imgCalzado.imgCal2}
           img3={producto.imgCalzado.imgCal3}
         />
-        <Box marginLeft="1.5rem" sx={{ width: "38%" }}>
+        <Box
+          marginLeft="1.5rem"
+          sx={{ width: { xs: "100%", sm: "90%", md: "38%" } }}
+        >
           <Typography variant="body2" component="p" color="gray">
             Nuevo
           </Typography>
@@ -134,14 +139,14 @@ function VistaDetallada() {
               justifyContent: "center",
               alignItems: "center",
               gap: "0.5rem",
-              width: "100%",
               marginTop: "1rem",
+              width: "90%",
             }}
           >
             <Button
               variant="contained"
               sx={{
-                width: "90%",
+                width: { xs: "60%", sm: "70%" },
                 maxWidth: "300px",
               }}
             >
@@ -150,8 +155,9 @@ function VistaDetallada() {
             <Button
               variant="outlined"
               sx={{
-                width: "90%",
+                width: { xs: "60%", sm: "70%" },
                 maxWidth: "300px",
+                marginBottom: { xs: "1rem" },
               }}
             >
               Agregar al carrito
