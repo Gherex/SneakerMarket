@@ -3,8 +3,16 @@ import { NavLink } from "react-router-dom";
 import imgZapatillas from "/images/calzado/categoria-zapatillas.jpg";
 import imgZapatos from "/images/calzado/categoria-zapatos.jpg";
 import imgBotas from "/images/calzado/categoria-botas.jpg";
+import { useContext } from "react";
+import { BusquedaContext } from "../context/BusquedaContext";
 
 function Categorias() {
+  const { setBusqueda } = useContext(BusquedaContext);
+
+  function resetearBusqueda() {
+    setBusqueda("");
+  }
+
   return (
     <Container disableGutters sx={{ minWidth: "80%" }}>
       <Typography
@@ -27,7 +35,11 @@ function Categorias() {
           alignItems="stretch"
         >
           <Grid2 item size={{ xs: 12, md: 6 }}>
-            <NavLink to="/zapatillas" style={{ textDecoration: "none" }}>
+            <NavLink
+              to="/zapatillas"
+              style={{ textDecoration: "none" }}
+              onClick={resetearBusqueda}
+            >
               <Card
                 sx={{
                   backgroundImage: `url(${imgZapatillas})`,
@@ -52,7 +64,11 @@ function Categorias() {
             rowSpacing={3}
           >
             <Grid2 item size={{ xs: 6 }}>
-              <NavLink to="/zapatos" style={{ textDecoration: "none" }}>
+              <NavLink
+                to="/zapatos"
+                style={{ textDecoration: "none" }}
+                onClick={resetearBusqueda}
+              >
                 <Card
                   sx={{
                     backgroundImage: `url(${imgZapatos})`,
@@ -70,7 +86,11 @@ function Categorias() {
               </NavLink>
             </Grid2>
             <Grid2 item size={{ xs: 6 }}>
-              <NavLink to="/botas" style={{ textDecoration: "none" }}>
+              <NavLink
+                to="/botas"
+                style={{ textDecoration: "none" }}
+                onClick={resetearBusqueda}
+              >
                 <Card
                   sx={{
                     backgroundImage: `url(${imgBotas})`,

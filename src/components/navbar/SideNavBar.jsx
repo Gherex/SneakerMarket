@@ -9,11 +9,17 @@ import {
 } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { NavLink } from "react-router-dom";
+import { BusquedaContext } from "../../context/BusquedaContext";
 
 function SideNavBar() {
   const [openCalzado, setOpenCalzado] = useState(false);
+  const { setBusqueda } = useContext(BusquedaContext);
+
+  function resetearBusqueda() {
+    setBusqueda("");
+  }
 
   return (
     <Box sx={{ width: 250, height: "100%", bgcolor: "#040412" }}>
@@ -40,17 +46,29 @@ function SideNavBar() {
           <Collapse in={openCalzado} timeout="auto" unmountOnExit>
             <List component="div" disablePadding>
               <ListItem sx={{ pl: 4 }} disablePadding>
-                <ListItemButton component={NavLink} to="/zapatos">
+                <ListItemButton
+                  component={NavLink}
+                  to="/zapatos"
+                  onClick={resetearBusqueda}
+                >
                   <ListItemText primary="Zapatos" />
                 </ListItemButton>
               </ListItem>
               <ListItem sx={{ pl: 4 }} disablePadding>
-                <ListItemButton component={NavLink} to="/zapatillas">
+                <ListItemButton
+                  component={NavLink}
+                  to="/zapatillas"
+                  onClick={resetearBusqueda}
+                >
                   <ListItemText primary="Zapatillas" />
                 </ListItemButton>
               </ListItem>
               <ListItem sx={{ pl: 4 }} disablePadding>
-                <ListItemButton component={NavLink} to="/botas">
+                <ListItemButton
+                  component={NavLink}
+                  to="/botas"
+                  onClick={resetearBusqueda}
+                >
                   <ListItemText primary="Botas" />
                 </ListItemButton>
               </ListItem>
