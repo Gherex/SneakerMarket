@@ -75,6 +75,9 @@ function ProductosDestacados() {
                   <Link
                     to={`/calzado/${producto.id}`}
                     style={{ textDecoration: "none", listStyle: "none" }}
+                    onClick={() => {
+                      window.scrollTo({ top: 0 });
+                    }}
                   >
                     <CardActionArea>
                       {/* Contenedor de la imagen */}
