@@ -10,14 +10,14 @@ import {
   Grid2,
   Typography,
 } from "@mui/material";
-import EnvioGratis from "./EnvioGratis";
-import { Link } from "react-router-dom";
-import { useCalzado } from "./calzado/useCalzado";
+import EnvioGratis from "../components/EnvioGratis";
+import { useCalzado } from "../hooks/useCalzado";
 import { BusquedaContext } from "../context/BusquedaContext";
+import { Link } from "react-router-dom";
 
-function VistaDeBusqueda() {
-  const { busqueda } = useContext(BusquedaContext); // Tomamos el valor de busqueda del contexto
-  const { calzado: dataCalzado, loading, error } = useCalzado({ busqueda }); // Pasamos busqueda al hook
+function VistaFiltrada({ tipoCalzado }) {
+  const { busqueda } = useContext(BusquedaContext);
+  const { calzado: dataCalzado, loading, error } = useCalzado({ busqueda });
 
   if (loading)
     return (
@@ -54,33 +54,35 @@ function VistaDeBusqueda() {
           fontSize: { xs: "1.5rem", sm: "2.5rem" },
         }}
       >
-        {`Resultado de la búsqueda "${busqueda}":`}
+        {tipoCalzado}
       </Typography>
       <Grid2
         container
         spacing={3}
-        sx={{ justifyContent: "center", padding: { xs: "0 2rem", lg: "0" } }}
+        sx={{
+          justifyContent: "center",
+          padding: { xs: "0 2rem", lg: "0" },
+        }}
       >
         {dataCalzado &&
-          Object.entries(dataCalzado).map(([, productos]) => {
-            return Object.entries(productos).map(([key, producto]) => (
+          Object.entries(dataCalzado[tipoCalzado.toLowerCase()]).map(
+            ([key, producto]) => (
               <Grid2 item size={{ xs: 12, sm: 6, md: 6, lg: 3 }} key={key}>
-                <Card
-                  sx={{
-                    height: "min-content",
-                    width: "100%",
-                    transition: "0.2s",
-                    "&:hover": {
-                      transform: "scale(1.01)",
-                    },
-                  }}
+                <Link
+                  to={`/calzado/${producto.id}`}
+                  style={{ textDecoration: "none" }}
                 >
-                  <Link
-                    to={`/calzado/${producto.id}`}
-                    style={{ textDecoration: "none", listStyle: "none" }}
+                  <Card
+                    sx={{
+                      height: "min-content",
+                      width: "100%",
+                      transition: "0.2s",
+                      "&:hover": {
+                        transform: "scale(1.01)",
+                      },
+                    }}
                   >
                     <CardActionArea>
-                      {/* Contenedor de la imagen */}
                       <CardMedia
                         sx={{
                           width: "100%",
@@ -98,21 +100,18 @@ function VistaDeBusqueda() {
                         />
                       </CardMedia>
                       <Divider variant="middle" component="li" />
-                      {/* Contenedor de los textos y el botón */}
                       <Box
                         sx={{
                           display: "flex",
                           flexDirection: "column",
                           justifyContent: "space-around",
                           padding: "1rem",
-                          height: "250px", // El contenido ocupa el otro 50%
+                          height: "250px",
                         }}
                       >
-                        {/* Precio */}
                         <Typography variant="h4" component="p" color="primary">
                           $ {producto.precio}
                         </Typography>
-                        {/* Título */}
                         <Typography
                           variant="body1"
                           component="p"
@@ -135,14 +134,14 @@ function VistaDeBusqueda() {
                         </Button>
                       </Box>
                     </CardActionArea>
-                  </Link>
-                </Card>
+                  </Card>
+                </Link>
               </Grid2>
-            ));
-          })}
+            )
+          )}
       </Grid2>
     </Container>
   );
 }
 
-export default VistaDeBusqueda;
+export default VistaFiltrada;

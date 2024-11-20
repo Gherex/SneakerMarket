@@ -3,8 +3,8 @@ import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import CirculosCarrusel from "./CirculosCarrusel";
 import TextosCarrusel from "./TextosCarrusel";
-import { useCarrusel } from "./useCarrusel";
 import { useEffect } from "react";
+import { useCarrusel } from "../../hooks/useCarrusel";
 
 export default function Carrusel() {
   const {

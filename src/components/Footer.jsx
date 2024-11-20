@@ -24,6 +24,7 @@ function Footer() {
         alignItems: "center",
         width: "100%",
         color: "#d2d2d2",
+        marginTop: "8rem",
       }}
     >
       <Box

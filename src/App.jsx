@@ -1,19 +1,18 @@
 import { Box, CssBaseline } from "@mui/material";
-import Inicio from "./components/Inicio";
+import Inicio from "./vistas/Inicio";
 import Footer from "./components/Footer";
 import BarraNavegacion from "./components/navbar/BarraNavegacion";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { Route, Routes } from "react-router-dom";
-import Contacto from "./components/Contacto";
-import Carrito from "./components/Carrito";
-import SobreNosotros from "./components/SobreNosotros";
+import Contacto from "./vistas/Contacto";
+import Carrito from "./vistas/Carrito";
+import SobreNosotros from "./vistas/SobreNosotros";
 import Zapatillas from "./components/calzado/Zapatillas";
 import Zapatos from "./components/calzado/Zapatos";
 import Botas from "./components/calzado/Botas";
-import VistaDetallada from "./components/calzado/vistadetallada/VistaDetallada";
-import { BusquedaProvider } from "./context/BusquedaContext";
-import VistaFiltrada from "./components/calzado/VistaFiltrada";
-import VistaDeBusqueda from "./components/VistaDeBusqueda";
+import VistaDetallada from "./vistas/vistadetallada/VistaDetallada";
+import { BusquedaProvider } from "./context/BusquedaProvider";
+import VistaDeBusqueda from "./vistas/VistaDeBusqueda";
 
 function App() {
   const theme = createTheme({

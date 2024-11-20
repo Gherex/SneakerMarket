@@ -1,6 +1,6 @@
 import { Box, Button, Container, Link, Typography } from "@mui/material";
 import { useParams } from "react-router-dom";
-import { useCalzado } from "../useCalzado";
+import { useCalzado } from "../../hooks/useCalzado";
 import PresentacionProducto from "./PresentacionProducto";
 import TalleSelect from "./TalleSelect";
 import CantidadSelect from "./CantidadSelect";
@@ -129,9 +129,7 @@ function VistaDetallada() {
             <Link sx={{ cursor: "pointer" }}>Más formas de entrega</Link>
           </Box>
           <TalleSelect />
-          <Typography color="primary">
-            Cantidad: <CantidadSelect />
-          </Typography>
+          <CantidadSelect />
           <Box
             sx={{
               display: "flex",

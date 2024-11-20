@@ -35,8 +35,11 @@ function PresentacionProducto({ img1, img2, img3 }) {
       <Button
         variant="contained"
         sx={{
-          padding: isSmallScreen ? "1rem 0" : "1rem 0.5rem",
-          borderRadius: "50%",
+          padding: isSmallScreen ? "0.5rem" : "1rem",
+          borderRadius: isSmallScreen ? "0" : "50%",
+          minWidth: "min-content",
+          position: isSmallScreen ? "absolute" : "relative",
+          left: isSmallScreen ? 20 : "",
         }}
         onClick={decrementarIndex}
       >
@@ -50,7 +53,12 @@ function PresentacionProducto({ img1, img2, img3 }) {
         src={`/images/calzado/${arrayImagenes[index]}`}
         alt={`Foto de calzado perfil ${index + 1}`}
         draggable="false"
-        style={{ width: "100%", maxWidth: "600px", objectFit: "contain" }}
+        style={{
+          width: isSmallScreen ? "200%" : "100%",
+          minHeight: isSmallScreen ? "300px" : "auto",
+          maxWidth: "600px",
+          objectFit: "contain",
+        }}
       />
 
       {/* Botón derecho */}
@@ -58,8 +66,11 @@ function PresentacionProducto({ img1, img2, img3 }) {
         variant="contained"
         color="primary"
         sx={{
-          padding: isSmallScreen ? "1rem 0" : "1rem 0.5rem",
-          borderRadius: "50%",
+          position: isSmallScreen ? "absolute" : "relative",
+          right: isSmallScreen ? 20 : "",
+          padding: isSmallScreen ? "0.5rem" : "1rem",
+          borderRadius: isSmallScreen ? 0 : "50%",
+          minWidth: "min-content",
         }}
         onClick={incrementarIndex}
       >

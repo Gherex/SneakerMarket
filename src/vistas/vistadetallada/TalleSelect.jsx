@@ -9,7 +9,11 @@ function TalleSelect() {
   };
 
   return (
-    <FormControl fullWidth variant="outlined" sx={{ color: "black" }}>
+    <FormControl
+      fullWidth
+      variant="outlined"
+      sx={{ color: "black", marginBottom: "1rem" }}
+    >
       <InputLabel id="talle-label" sx={{ color: "black" }}>
         Talle
       </InputLabel>

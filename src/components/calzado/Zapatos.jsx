@@ -1,4 +1,4 @@
-import VistaFiltrada from "./VistaFiltrada";
+import VistaFiltrada from "../../vistas/VistaFiltrada";
 
 function Zapatos() {
   return <VistaFiltrada tipoCalzado="Zapatos" />;

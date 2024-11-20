@@ -1,8 +1,8 @@
-import Carrusel from "./carrusel/Carrusel";
-import InfoCompras from "./infocompras/InfoCompras";
-import Categorias from "./Categorias";
-import ProductosDestacados from "./calzado/ProductosDestacados";
+import Carrusel from "../components/carrusel/Carrusel";
+import InfoCompras from "../components/infocompras/InfoCompras";
+import Categorias from "../components/Categorias";
 import { Container } from "@mui/material";
+import ProductosDestacados from "../components/ProductosDestacados";
 
 function Inicio() {
   return (

@@ -10,8 +10,8 @@ import {
   Typography,
 } from "@mui/material";
 import { Link } from "react-router-dom";
-import EnvioGratis from "../EnvioGratis";
-import { useCalzado } from "./useCalzado";
+import EnvioGratis from "./EnvioGratis";
+import { useCalzado } from "../hooks/useCalzado";
 
 function ProductosDestacados() {
   const { calzado: dataCalzado, loading, error } = useCalzado();
