@@ -4,13 +4,18 @@ import { useCalzado } from "../../hooks/useCalzado";
 import PresentacionProducto from "./PresentacionProducto";
 import TalleSelect from "./TalleSelect";
 import CantidadSelect from "./CantidadSelect";
+import { useCart } from "../../hooks/useCart";
+import { useState } from "react";
 
 function VistaDetallada() {
-  const { id } = useParams(); // obtengo el id del producto desde la URL
+  const { id } = useParams();
   const { producto, loading, error } = useCalzado({
     productID: id,
     busqueda: "",
   });
+  const { addToCart } = useCart();
+
+  const [cantidad, setCantidad] = useState(0);
 
   if (loading)
     return (
@@ -34,6 +39,7 @@ function VistaDetallada() {
         Error: {error}
       </Typography>
     );
+
   return (
     <Container
       disableGutters
@@ -129,7 +135,7 @@ function VistaDetallada() {
             <Link sx={{ cursor: "pointer" }}>Más formas de entrega</Link>
           </Box>
           <TalleSelect />
-          <CantidadSelect />
+          <CantidadSelect setCantidad={setCantidad} />
           <Box
             sx={{
               display: "flex",
@@ -144,7 +150,7 @@ function VistaDetallada() {
             <Button
               variant="contained"
               sx={{
-                width: { xs: "60%", sm: "70%" },
+                width: { xs: "70%", sm: "70%" },
                 maxWidth: "300px",
               }}
             >
@@ -153,9 +159,16 @@ function VistaDetallada() {
             <Button
               variant="outlined"
               sx={{
-                width: { xs: "60%", sm: "70%" },
+                width: { xs: "70%", sm: "70%" },
                 maxWidth: "300px",
                 marginBottom: { xs: "1rem" },
+              }}
+              onClick={() => {
+                if (cantidad > 0) {
+                  addToCart(producto, cantidad);
+                } else {
+                  addToCart(producto, 1);
+                }
               }}
             >
               Agregar al carrito

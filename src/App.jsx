@@ -13,6 +13,7 @@ import Botas from "./components/calzado/Botas";
 import VistaDetallada from "./vistas/vistadetallada/VistaDetallada";
 import { BusquedaProvider } from "./context/BusquedaProvider";
 import VistaDeBusqueda from "./vistas/VistaDeBusqueda";
+import { CartProvider } from "./context/CartProvider";
 
 function App() {
   const theme = createTheme({
@@ -33,30 +34,32 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <BusquedaProvider>
-        <CssBaseline />
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            minHeight: "100vh",
-          }}
-        >
-          <BarraNavegacion />
-          <Box component="main" sx={{ flexGrow: 1, paddingTop: "64px" }}>
-            <Routes>
-              <Route path="/" element={<Inicio />} />
-              <Route path="/contacto" element={<Contacto />} />
-              <Route path="/carrito" element={<Carrito />} />
-              <Route path="/sobrenosotros" element={<SobreNosotros />} />
-              <Route path="/zapatillas" element={<Zapatillas />} />
-              <Route path="/zapatos" element={<Zapatos />} />
-              <Route path="/botas" element={<Botas />} />
-              <Route path="/calzado/:id" element={<VistaDetallada />} />
-              <Route path="/busqueda" element={<VistaDeBusqueda />} />
-            </Routes>
+        <CartProvider>
+          <CssBaseline />
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              minHeight: "100vh",
+            }}
+          >
+            <BarraNavegacion />
+            <Box component="main" sx={{ flexGrow: 1, paddingTop: "64px" }}>
+              <Routes>
+                <Route path="/" element={<Inicio />} />
+                <Route path="/contacto" element={<Contacto />} />
+                <Route path="/carrito" element={<Carrito />} />
+                <Route path="/sobrenosotros" element={<SobreNosotros />} />
+                <Route path="/zapatillas" element={<Zapatillas />} />
+                <Route path="/zapatos" element={<Zapatos />} />
+                <Route path="/botas" element={<Botas />} />
+                <Route path="/calzado/:id" element={<VistaDetallada />} />
+                <Route path="/busqueda" element={<VistaDeBusqueda />} />
+              </Routes>
+            </Box>
+            <Footer />
           </Box>
-          <Footer />
-        </Box>
+        </CartProvider>
       </BusquedaProvider>
     </ThemeProvider>
   );

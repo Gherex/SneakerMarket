@@ -71,6 +71,9 @@ function VistaFiltrada({ tipoCalzado }) {
                 <Link
                   to={`/calzado/${producto.id}`}
                   style={{ textDecoration: "none" }}
+                  onClick={() => {
+                    window.scrollTo({ top: 0 });
+                  }}
                 >
                   <Card
                     sx={{

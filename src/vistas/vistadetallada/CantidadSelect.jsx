@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { FormControl, InputLabel, Select, MenuItem } from "@mui/material";
 
-function CantidadSelect() {
-  const [cantidad, setCantidad] = useState("");
+function CantidadSelect({ setCantidad }) {
+  const [cantidad, setCantidadLocal] = useState(0);
 
   const handleChange = (event) => {
-    setCantidad(event.target.value);
+    const nuevaCantidad = parseInt(event.target.value, 10) || 0; // Convertir a número
+    setCantidadLocal(nuevaCantidad);
+    setCantidad(nuevaCantidad);
   };
 
   return (
@@ -29,7 +31,7 @@ function CantidadSelect() {
           width: { xs: "90%" },
         }}
       >
-        <MenuItem value="">
+        <MenuItem value={0}>
           <em style={{ color: "gray" }}>Seleccioná una opción</em>
         </MenuItem>
         {Array.from({ length: 20 }, (_, index) => index + 1).map((number) => (
