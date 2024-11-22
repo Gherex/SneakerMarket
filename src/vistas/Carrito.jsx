@@ -151,7 +151,10 @@ function Carrito() {
             {/* BOTÓN VACIAR LISTA */}
             <Button
               variant="outlined"
-              onClick={clearCart}
+              onClick={() => {
+                clearCart();
+                window.scrollTo({ top: 0 });
+              }}
               sx={{
                 fontSize: "1.2rem",
                 marginLeft: "1rem",

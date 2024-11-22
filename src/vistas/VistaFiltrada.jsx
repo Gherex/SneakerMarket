@@ -14,6 +14,7 @@ import EnvioGratis from "../components/EnvioGratis";
 import { useCalzado } from "../hooks/useCalzado";
 import { BusquedaContext } from "../context/BusquedaContext";
 import { Link } from "react-router-dom";
+import CircularProgress from "@mui/material/CircularProgress";
 
 function VistaFiltrada({ tipoCalzado }) {
   const { busqueda } = useContext(BusquedaContext);
@@ -27,7 +28,7 @@ function VistaFiltrada({ tipoCalzado }) {
         color="primary"
         sx={{ textAlign: "center" }}
       >
-        Cargando...
+        <CircularProgress />
       </Typography>
     );
   if (error)

@@ -6,6 +6,7 @@ import TalleSelect from "./TalleSelect";
 import CantidadSelect from "./CantidadSelect";
 import { useCart } from "../../hooks/useCart";
 import { useState } from "react";
+import CircularProgress from "@mui/material/CircularProgress";
 
 function VistaDetallada() {
   const { id } = useParams();
@@ -26,7 +27,7 @@ function VistaDetallada() {
         color="primary"
         sx={{ textAlign: "center" }}
       >
-        Cargando...
+        <CircularProgress />
       </Typography>
     );
   if (error)
@@ -151,7 +152,8 @@ function VistaDetallada() {
             <Button
               variant="contained"
               sx={{
-                width: { xs: "70%", sm: "70%" },
+                width: { xs: "90%", sm: "70%" },
+                fontSize: "1rem",
                 maxWidth: "300px",
               }}
             >
@@ -160,7 +162,8 @@ function VistaDetallada() {
             <Button
               variant="outlined"
               sx={{
-                width: { xs: "70%", sm: "70%" },
+                width: { xs: "90%", sm: "70%" },
+                fontSize: "1rem",
                 maxWidth: "300px",
                 marginBottom: { xs: "1rem" },
               }}

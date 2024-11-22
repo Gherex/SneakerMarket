@@ -12,6 +12,7 @@ import {
 import { Link } from "react-router-dom";
 import EnvioGratis from "./EnvioGratis";
 import { useCalzado } from "../hooks/useCalzado";
+import CircularProgress from "@mui/material/CircularProgress";
 
 function ProductosDestacados() {
   const { calzado: dataCalzado, loading, error } = useCalzado();
@@ -24,7 +25,7 @@ function ProductosDestacados() {
         color="primary"
         sx={{ textAlign: "center" }}
       >
-        Cargando...
+        <CircularProgress />
       </Typography>
     );
   if (error)

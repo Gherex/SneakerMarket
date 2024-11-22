@@ -14,6 +14,7 @@ import EnvioGratis from "../components/EnvioGratis";
 import { Link } from "react-router-dom";
 import { useCalzado } from "../hooks/useCalzado";
 import { BusquedaContext } from "../context/BusquedaContext";
+import CircularProgress from "@mui/material/CircularProgress";
 
 function VistaDeBusqueda() {
   const { busqueda } = useContext(BusquedaContext); // Tomamos el valor de busqueda del contexto
@@ -27,7 +28,7 @@ function VistaDeBusqueda() {
         color="primary"
         sx={{ textAlign: "center" }}
       >
-        Cargando...
+        <CircularProgress />
       </Typography>
     );
   if (error)

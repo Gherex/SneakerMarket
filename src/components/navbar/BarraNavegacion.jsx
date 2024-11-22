@@ -1,5 +1,5 @@
-import { AppBar, Box, Drawer, IconButton, Toolbar } from "@mui/material";
-import { useState } from "react";
+import { AppBar, Badge, Box, Drawer, IconButton, Toolbar } from "@mui/material";
+import { useEffect, useState } from "react";
 import DehazeIcon from "@mui/icons-material/Dehaze";
 import SideNavBar from "./SideNavBar";
 import BarraBusqueda from "./BarraBusqueda";
@@ -7,9 +7,27 @@ import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import { NavLink } from "react-router-dom";
 import imagenLogo from "/images/sneakerMarketLogo.png";
+import styled from "@emotion/styled";
+import { useCart } from "../../hooks/useCart";
 
 function BarraNavegacion() {
   const [open, setOpen] = useState(false);
+  const { cart } = useCart();
+  const [cantidadProductos, setCantidadProductos] = useState(0);
+
+  useEffect(() => {
+    const totalCantidad = cart.reduce((sum, item) => sum + item.cantidad, 0);
+    setCantidadProductos(totalCantidad);
+  }, [cart]);
+
+  const StyledBadge = styled(Badge)(({ theme }) => ({
+    "& .MuiBadge-badge": {
+      right: -3,
+      top: 13,
+      border: `2px solid ${theme.palette.background.paper}`,
+      padding: "0 4px",
+    },
+  }));
 
   return (
     <AppBar position="fixed">
@@ -62,6 +80,7 @@ function BarraNavegacion() {
 
           {/* Tu carrito */}
           <IconButton
+            aria-label="cart"
             color="inherit"
             component={NavLink}
             to="/carrito"
@@ -69,7 +88,9 @@ function BarraNavegacion() {
               window.scrollTo({ top: 0 });
             }}
           >
-            <ShoppingCartOutlinedIcon />
+            <StyledBadge badgeContent={cantidadProductos} color="secondary">
+              <ShoppingCartOutlinedIcon />
+            </StyledBadge>
           </IconButton>
         </Box>
       </Toolbar>
