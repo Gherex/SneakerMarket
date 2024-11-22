@@ -38,7 +38,10 @@ function Categorias() {
             <NavLink
               to="/zapatillas"
               style={{ textDecoration: "none" }}
-              onClick={resetearBusqueda}
+              onClick={() => {
+                window.scrollTo({ top: 0 });
+                resetearBusqueda();
+              }}
             >
               <Card
                 sx={{
@@ -67,7 +70,10 @@ function Categorias() {
               <NavLink
                 to="/zapatos"
                 style={{ textDecoration: "none" }}
-                onClick={resetearBusqueda}
+                onClick={() => {
+                  window.scrollTo({ top: 0 });
+                  resetearBusqueda();
+                }}
               >
                 <Card
                   sx={{
@@ -89,7 +95,10 @@ function Categorias() {
               <NavLink
                 to="/botas"
                 style={{ textDecoration: "none" }}
-                onClick={resetearBusqueda}
+                onClick={() => {
+                  window.scrollTo({ top: 0 });
+                  resetearBusqueda();
+                }}
               >
                 <Card
                   sx={{

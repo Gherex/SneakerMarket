@@ -61,7 +61,14 @@ function BarraNavegacion() {
           </IconButton>
 
           {/* Tu carrito */}
-          <IconButton color="inherit" component={NavLink} to="/carrito">
+          <IconButton
+            color="inherit"
+            component={NavLink}
+            to="/carrito"
+            onClick={() => {
+              window.scrollTo({ top: 0 });
+            }}
+          >
             <ShoppingCartOutlinedIcon />
           </IconButton>
         </Box>

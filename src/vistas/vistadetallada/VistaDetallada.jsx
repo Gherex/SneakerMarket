@@ -1,5 +1,5 @@
 import { Box, Button, Container, Link, Typography } from "@mui/material";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useCalzado } from "../../hooks/useCalzado";
 import PresentacionProducto from "./PresentacionProducto";
 import TalleSelect from "./TalleSelect";
@@ -16,6 +16,7 @@ function VistaDetallada() {
   const { addToCart } = useCart();
 
   const [cantidad, setCantidad] = useState(0);
+  const navigate = useNavigate();
 
   if (loading)
     return (
@@ -169,6 +170,8 @@ function VistaDetallada() {
                 } else {
                   addToCart(producto, 1);
                 }
+                window.scrollTo({ top: 0 });
+                navigate("/carrito");
               }}
             >
               Agregar al carrito

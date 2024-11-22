@@ -1,8 +1,16 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { CartContext } from "./CartContext";
 
 export function CartProvider({ children }) {
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState(() => {
+    const storedCart = localStorage.getItem("cart");
+    return storedCart ? JSON.parse(storedCart) : [];
+  });
+
+  // Sincronizar cambios del carrito con localStorage
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }, [cart]);
 
   const addToCart = (product, cant) => {
     // Buscar si el producto ya está en el carrito
@@ -15,12 +23,12 @@ export function CartProvider({ children }) {
       return setCart(newCart);
     }
 
-    // Si el producto no está, agregarlo con la cantidad inicial
+    // Si el producto no está, agregar con la cantidad seleccionada
     setCart((prevCart) => [
       ...prevCart,
       {
         ...product,
-        cantidad: cant, // Agregar con la cantidad seleccionada
+        cantidad: cant,
       },
     ]);
   };
@@ -30,7 +38,7 @@ export function CartProvider({ children }) {
   };
 
   const clearCart = () => {
-    setCart([]);
+    setCart([]); // Vaciar el carrito
   };
 
   return (
