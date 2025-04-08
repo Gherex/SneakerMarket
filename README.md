@@ -1,8 +1,45 @@
-# Sneaker Market
+# 👟 Sneaker Market
 
-🇦🇷 Sitio web de compra de zapatillas con funcionalidad de carrito de la compra. Hecho con React y Material Design.
+¡Bienvenido a **Sneaker Market**!  
+Una aplicación web pensada como una tienda online de zapatillas, donde podés explorar distintos modelos, agregarlos al carrito y simular una compra.
 
-🇺🇸 Sneaker shopping website with shopping cart functionality. Made it with React and Material Design.
+## 📖 Descripción
+Este proyecto fue desarrollado en **JavaScript con React** para el frontend, y utiliza herramientas modernas del ecosistema React.  
+Es una app sencilla pero funcional, creada para practicar conceptos clave de desarrollo frontend, como componentes reutilizables, manejo de estado y rutas.
 
-## https://sneakermarket.netlify.app/
+## 🛠️ Tecnologías utilizadas
+- React
+- React Router
+- Material UI
+- JavaScript
+- HTML & CSS
 
+## 📷 Capturas de pantalla
+A continuación, algunas imágenes del sitio en funcionamiento:
+
+![Home](images/inicio.png)
+![Catálogo](images/catalogo.png)
+![Detalle de producto](images/vista-detalles.png)
+![Carrito](images/carrito.png)
+
+## 🚀 Cómo ejecutar el proyecto
+1. Clonar este repositorio:
+   ```sh
+   git clone https://github.com/Gherex/SneakerMarket.git
+   ```
+2. Instalar las dependencias: npm install
+3. Ejecutar la app en modo desarrollo: npm run dev
+4. Abrir en el navegador: http://localhost:5173
+
+## 📁 Estructura del proyecto
+El proyecto tiene una estructura simple, con rutas para:
+
+- Inicio
+- Productos
+- Detalle de cada zapatilla
+- Carrito de compras
+
+## ✍️ Autor
+**Germán Lagger**  
+- [GitHub](https://github.com/Gherex)
+- [LinkedIn](https://www.linkedin.com/in/germanlagger/)
